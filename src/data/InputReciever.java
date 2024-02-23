@@ -38,14 +38,22 @@ public class InputReciever {
 
     public void inputHandler(String input) {
         try {
-            if (input.equals("add")) {
-                result = "add";
-            } else if (input.equals("subtract")) {
-                result = "sub";
-            } else if (input.equals("divide")) {
-                result = "divide";
-            } else if (input.equals("multiply")) {
-                result = "multiply";
+            switch(input) {
+                case "add":
+                    result = "add";
+                    break;
+                case "subtract":
+                    result = "subtract";
+                    break;
+                case "divide":
+                    result = "divide";
+                    break;
+                case "multiply":
+                    result = "multiply";
+                    break;
+                default:
+                    System.out.println("Invalid input.");
+                    System.exit(0);
             }
         } catch (Exception e) {
             System.out.println("An error occured: " + e);

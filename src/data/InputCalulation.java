@@ -1,15 +1,33 @@
 package src.data;
+
 import java.util.Scanner;
+
 public class InputCalulation extends Data {
     public Scanner KEYBOARD = new Scanner(System.in);
-    private final String SECONDPROMPT = "Would you like to use:\n [a double]\n [float]\n or [int]?\n Please enter: ";
     private String input;
 
+
+    public void additionalPrompt() {
+        try {
+            final String secondPrompt = "Would you like to use:\n [a double]\n [float]\n or [int]?\n Please enter: ";
+            System.out.println(secondPrompt);
+            setInput(KEYBOARD.nextLine());
+        } catch (Exception e) {
+            System.out.println("An error occured: " + e);
+        }
+    }
+
+    public void setInput(String input) {
+        this.input = input;
+    }
+    public String getInput() {
+        return input;
+    }
+
     public void addInput() {
-        System.out.println(SECONDPROMPT);
-        KEYBOARD.nextLine();
-        if (isAddition()){
-            if (isInteger()){
+        if (isAddition()) {
+            additionalPrompt();
+            if (isInteger()) {
                 System.out.println("Please enter the first value: ");
                 setIntX(KEYBOARD.nextInt());
                 System.out.println("Please enter the second value: ");
@@ -35,9 +53,10 @@ public class InputCalulation extends Data {
             }
         }
     }
+
     public void subtractInput() {
-        System.out.println(SECONDPROMPT);
         if (isSubtraction()) {
+            additionalPrompt();
             if (isInteger()) {
                 System.out.println("Please enter the first value: ");
                 setIntX(KEYBOARD.nextInt());
@@ -66,8 +85,8 @@ public class InputCalulation extends Data {
     }
 
     public void multiplyInput() {
-        System.out.println(SECONDPROMPT);
         if (isMultiply()) {
+            additionalPrompt();
             if (isInteger()) {
                 System.out.println("Please enter the first value: ");
                 setIntX(KEYBOARD.nextInt());
@@ -98,14 +117,15 @@ public class InputCalulation extends Data {
 
     public void divideInput() {
         if (isDivide()) {
-            if (isInteger()){
+            additionalPrompt();
+            if (isInteger()) {
                 System.out.println("Please enter the first value: ");
                 setIntX(KEYBOARD.nextInt());
                 System.out.println("Please enter the second value: ");
                 setIntY(KEYBOARD.nextInt());
                 int intSum = divide(getIntX(), getIntY());
                 System.out.println(intSum);
-            } else if(isDouble()) {
+            } else if (isDouble()) {
                 System.out.println("Please enter the first value: ");
                 setX(KEYBOARD.nextDouble());
                 System.out.println("Please enter the second value: ");
@@ -117,10 +137,9 @@ public class InputCalulation extends Data {
     }
 
 
-
     public boolean isInteger() {
-        input = KEYBOARD.nextLine().toLowerCase();
-        if (input.equals("int")) {
+        getInput();
+        if (getInput().equals("int")) {
             return true;
         } else {
             return false;
@@ -128,8 +147,8 @@ public class InputCalulation extends Data {
     }
 
     public boolean isDouble() {
-        input = KEYBOARD.nextLine().toLowerCase();
-        if (input.equals("double")) {
+        getInput();
+        if (getInput().equals("double")) {
             return true;
         } else {
             return false;
@@ -137,8 +156,8 @@ public class InputCalulation extends Data {
     }
 
     public boolean isFloat() {
-        input = KEYBOARD.nextLine().toLowerCase();
-        if (input.equals("float")) {
+        getInput();
+        if (getInput().equals("float")) {
             return true;
         } else {
             return false;

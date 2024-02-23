@@ -1,3 +1,7 @@
+package src.data;
+
+import src.Calculation;
+
 /**
  * @author Override
  * @since 02/22/2024 @21:06
@@ -33,6 +37,30 @@ abstract class Data implements Calculation {
     public int divide(int x, int y) {
         setIntValues(x, y);
         return x / y;
+    }
+
+    @Override
+    public double add(double x, double y) {
+        setValues(x, y);
+        return x + y;
+    }
+
+    @Override
+    public int add(int x, int y) {
+        setIntValues(x, y);
+        return x + y;
+    }
+
+    @Override
+    public double subtract(double x, double y) {
+        setValues(x, y);
+        return x - y;
+    }
+
+    @Override
+    public int subtract(int x , int y){
+        setIntValues(x, y);
+        return x - y;
     }
 
     public void setValues(double x, double y){

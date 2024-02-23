@@ -2,7 +2,7 @@ package src.data;
 import java.util.Scanner;
 public class InputCalulation extends Data {
     public Scanner KEYBOARD = new Scanner(System.in);
-    private final String SECONDPROMPT = "Would you like to use a double,\n float,\n or int?\n Please enter: ";
+    private final String SECONDPROMPT = "Would you like to use:\n [a double]\n [float]\n or [int]?\n Please enter: ";
     private String input;
 
     public void addInput() {
@@ -14,13 +14,15 @@ public class InputCalulation extends Data {
                 setIntX(KEYBOARD.nextInt());
                 System.out.println("Please enter the second value: ");
                 setIntY(KEYBOARD.nextInt());
-                System.out.println(add(getIntX(), getIntY()));
+                int intSum = add(getIntX(), getIntY());
+                System.out.println(intSum);
             } else if (isDouble()) {
                 System.out.println("Please enter the first value: ");
                 setX(KEYBOARD.nextDouble());
                 System.out.println("Please enter the second value: ");
                 setY(KEYBOARD.nextDouble());
-                System.out.println(add(getX(), getY()));
+                double doubleSum = add(getX(), getY());
+                System.out.println(doubleSum);
             } else if (isFloat()) {
                 System.out.println("Please enter the first value: ");
                 setFloatX(KEYBOARD.nextFloat());
@@ -41,13 +43,15 @@ public class InputCalulation extends Data {
                 setIntX(KEYBOARD.nextInt());
                 System.out.println("Please enter the second value: ");
                 setIntY(KEYBOARD.nextInt());
-                System.out.println(subtract(getIntX(), getIntY()));
+                int intSum = subtract(getIntX(), getIntY());
+                System.out.println(intSum);
             } else if (isDouble()) {
                 System.out.println("Please enter the first value: ");
                 setX(KEYBOARD.nextDouble());
                 System.out.println("Please enter the second value: ");
                 setY(KEYBOARD.nextDouble());
-                System.out.println(subtract(getX(), getY()));
+                double doubleSum = subtract(getX(), getY());
+                System.out.println(doubleSum);
             } else if (isFloat()) {
                 System.out.println("Please enter the first value: ");
                 setFloatX(KEYBOARD.nextFloat());
@@ -69,13 +73,16 @@ public class InputCalulation extends Data {
                 setIntX(KEYBOARD.nextInt());
                 System.out.println("Please enter the second value: ");
                 setIntY(KEYBOARD.nextInt());
-                System.out.println(multiply(getIntX(), getIntY()));
+                int intSum = multiply(getIntX(), getIntY());
+
+                System.out.println(intSum);
             } else if (isDouble()) {
                 System.out.println("Please enter the first value: ");
                 setX(KEYBOARD.nextDouble());
                 System.out.println("Please enter the second value: ");
                 setY(KEYBOARD.nextDouble());
-                System.out.println(multiply(getX(), getY()));
+                double doubleSum = multiply(getX(), getY());
+                System.out.println(doubleSum);
             } else if (isFloat()) {
                 System.out.println("Please enter the first value: ");
                 setFloatX(KEYBOARD.nextFloat());
@@ -90,22 +97,21 @@ public class InputCalulation extends Data {
     }
 
     public void divideInput() {
-        double doubleSum = divide(getX(), getY());
-        int intSum = divide(getIntX(), getIntY());
-        
         if (isDivide()) {
             if (isInteger()){
                 System.out.println("Please enter the first value: ");
                 setIntX(KEYBOARD.nextInt());
                 System.out.println("Please enter the second value: ");
                 setIntY(KEYBOARD.nextInt());
+                int intSum = divide(getIntX(), getIntY());
                 System.out.println(intSum);
             } else if(isDouble()) {
                 System.out.println("Please enter the first value: ");
                 setX(KEYBOARD.nextDouble());
                 System.out.println("Please enter the second value: ");
                 setY(KEYBOARD.nextDouble());
-                System.out.println(divide(getX(), getY()));
+                double doubleSum = divide(getX(), getY());
+                System.out.println(doubleSum);
             }
         }
     }
@@ -138,4 +144,5 @@ public class InputCalulation extends Data {
             return false;
         }
     }
+
 }

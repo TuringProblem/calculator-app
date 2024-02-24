@@ -1,7 +1,6 @@
 package src.data;
 
 import java.util.Scanner;
-
 public class InputReciever {
     //currently not done
     public static Scanner KEYBOARD = new Scanner(System.in);
@@ -10,7 +9,6 @@ public class InputReciever {
 
     public void input() {
 
-        inputHandler(result);
         if (result.equals("add")) {
             calc.addInput();
         }

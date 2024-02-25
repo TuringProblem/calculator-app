@@ -5,9 +5,8 @@ import java.util.Scanner;
 public class InputCalulation extends Data {
     public Scanner KEYBOARD = new Scanner(System.in);
     private String input;
-    private final String valuePrompt = "Please enter the first value: ";
-    private final String secondValuePrompt = "Please enter the second value: ";
-
+    private final String VALUEPROMPT = "Please enter the first value: ";
+    private final String SECONDVALUEPROMPT = "Please enter the second value: ";
 
     public void additionalPrompt() {
         try {
@@ -30,23 +29,23 @@ public class InputCalulation extends Data {
         if (isAddition()) {
             additionalPrompt();
             if (isInteger()) {
-                System.out.println(valuePrompt);
+                System.out.println(VALUEPROMPT);
                 setIntX(KEYBOARD.nextInt());
-                System.out.println(secondValuePrompt);
+                System.out.println(SECONDVALUEPROMPT);
                 setIntY(KEYBOARD.nextInt());
                 int intSum = add(getIntX(), getIntY());
                 System.out.println(intSum);
             } else if (isDouble()) {
-                System.out.println(valuePrompt);
+                System.out.println(VALUEPROMPT);
                 setX(KEYBOARD.nextDouble());
-                System.out.println(secondValuePrompt);
+                System.out.println(SECONDVALUEPROMPT);
                 setY(KEYBOARD.nextDouble());
                 double doubleSum = add(getX(), getY());
                 System.out.println(doubleSum);
             } else if (isFloat()) {
-                System.out.println(valuePrompt);
+                System.out.println(VALUEPROMPT);
                 setFloatX(KEYBOARD.nextFloat());
-                System.out.println(secondValuePrompt);
+                System.out.println(SECONDVALUEPROMPT);
                 setFloatY(KEYBOARD.nextFloat());
                 System.out.println(add(getFloatX(), getFloatY()));
             } else {
@@ -60,23 +59,23 @@ public class InputCalulation extends Data {
         if (isSubtraction()) {
             additionalPrompt();
             if (isInteger()) {
-                System.out.println(valuePrompt);
+                System.out.println(VALUEPROMPT);
                 setIntX(KEYBOARD.nextInt());
-                System.out.println(secondValuePrompt);
+                System.out.println(SECONDVALUEPROMPT);
                 setIntY(KEYBOARD.nextInt());
                 int intSum = subtract(getIntX(), getIntY());
                 System.out.println(intSum);
             } else if (isDouble()) {
-                System.out.println(valuePrompt);
+                System.out.println(VALUEPROMPT);
                 setX(KEYBOARD.nextDouble());
-                System.out.println(secondValuePrompt);
+                System.out.println(SECONDVALUEPROMPT);
                 setY(KEYBOARD.nextDouble());
                 double doubleSum = subtract(getX(), getY());
                 System.out.println(doubleSum);
             } else if (isFloat()) {
-                System.out.println(valuePrompt);
+                System.out.println(VALUEPROMPT);
                 setFloatX(KEYBOARD.nextFloat());
-                System.out.println(secondValuePrompt);
+                System.out.println(SECONDVALUEPROMPT);
                 setFloatY(KEYBOARD.nextFloat());
                 System.out.println(subtract(getFloatX(), getFloatY()));
             } else {
@@ -90,24 +89,24 @@ public class InputCalulation extends Data {
         if (isMultiply()) {
             additionalPrompt();
             if (isInteger()) {
-                System.out.println(valuePrompt);
+                System.out.println(VALUEPROMPT);
                 setIntX(KEYBOARD.nextInt());
-                System.out.println(secondValuePrompt);
+                System.out.println(SECONDVALUEPROMPT);
                 setIntY(KEYBOARD.nextInt());
                 int intSum = multiply(getIntX(), getIntY());
 
                 System.out.println(intSum);
             } else if (isDouble()) {
-                System.out.println(valuePrompt);
+                System.out.println(VALUEPROMPT);
                 setX(KEYBOARD.nextDouble());
-                System.out.println(secondValuePrompt);
+                System.out.println(SECONDVALUEPROMPT);
                 setY(KEYBOARD.nextDouble());
                 double doubleSum = multiply(getX(), getY());
                 System.out.println(doubleSum);
             } else if (isFloat()) {
-                System.out.println(valuePrompt);
+                System.out.println(VALUEPROMPT);
                 setFloatX(KEYBOARD.nextFloat());
-                System.out.println(secondValuePrompt);
+                System.out.println(SECONDVALUEPROMPT);
                 setFloatY(KEYBOARD.nextFloat());
                 System.out.println(multiply(getFloatX(), getFloatY()));
             } else {
@@ -121,16 +120,16 @@ public class InputCalulation extends Data {
         if (isDivide()) {
             additionalPrompt();
             if (isInteger()) {
-                System.out.println(valuePrompt);
+                System.out.println(VALUEPROMPT);
                 setIntX(KEYBOARD.nextInt());
-                System.out.println(secondValuePrompt);
+                System.out.println(SECONDVALUEPROMPT);
                 setIntY(KEYBOARD.nextInt());
                 int intSum = divide(getIntX(), getIntY());
                 System.out.println(intSum);
             } else if (isDouble()) {
-                System.out.println(valuePrompt);
+                System.out.println(VALUEPROMPT);
                 setX(KEYBOARD.nextDouble());
-                System.out.println(secondValuePrompt);
+                System.out.println(SECONDVALUEPROMPT);
                 setY(KEYBOARD.nextDouble());
                 double doubleSum = divide(getX(), getY());
                 System.out.println(doubleSum);
